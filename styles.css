@@ -96,7 +96,7 @@ h2 {
 }
 
 .cta-button {
-    padding: 1rem 2rem;
+    padding: 0.7rem 2rem;
     font-size: 1.1rem;
     background: white;
     color: black;
@@ -104,6 +104,31 @@ h2 {
     border-radius: 50px;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.cta-button img {
+    height: 45px;
+    width: auto;
+}
+
+.button-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1.2;
+}
+
+.button-text small {
+    font-size: 0.7rem;
+    font-weight: 400;
+}
+
+.button-text strong {
+    font-size: 1.1rem;
+    font-weight: 600;
 }
 
 .cta-button:hover {
