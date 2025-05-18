@@ -29,6 +29,16 @@ nav {
     font-size: 1.5rem;
     font-weight: 700;
     color: white;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;  /* reduced gap for smaller icon */
+}
+
+.logo img.logo-img {
+    height: 35px !important;
+    width: auto !important;
+    display: inline-block;
+    vertical-align: middle;
 }
 
 nav ul {
