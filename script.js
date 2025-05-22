@@ -36,4 +36,30 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
         });
     });
+
+    // Email copy functionality
+    const copyEmailBtn = document.querySelector('.copy-email-btn');
+    const copySuccessMsg = document.getElementById('copySuccess');
+    
+    if (copyEmailBtn) {
+        copyEmailBtn.addEventListener('click', () => {
+            const emailText = copyEmailBtn.getAttribute('data-email');
+            
+            // Create a temporary input to copy from
+            const tempInput = document.createElement('input');
+            tempInput.value = emailText;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+            
+            // Show success message
+            copySuccessMsg.classList.add('show');
+            
+            // Hide message after delay
+            setTimeout(() => {
+                copySuccessMsg.classList.remove('show');
+            }, 2000);
+        });
+    }
 });
