@@ -1,6 +1,29 @@
 document.addEventListener('DOMContentLoaded', () => {
     const sections = document.querySelectorAll('.section');
     const navLinks = document.querySelectorAll('nav a');
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    
+    // Mobile menu toggle
+    if (mobileMenuToggle && navMenu) {
+        mobileMenuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('show');
+        });
+        
+        // Close menu when a link is clicked
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('show');
+            });
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!event.target.closest('.menu-container') && navMenu.classList.contains('show')) {
+                navMenu.classList.remove('show');
+            }
+        });
+    }
 
     // Function to update active menu item
     const updateActiveMenu = () => {
