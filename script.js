@@ -6,7 +6,10 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Mobile menu toggle
     if (mobileMenuToggle && navMenu) {
-        mobileMenuToggle.addEventListener('click', () => {
+        // Make sure event handlers are properly attached
+        mobileMenuToggle.addEventListener('click', function(event) {
+            event.preventDefault();
+            event.stopPropagation();
             navMenu.classList.toggle('show');
         });
         
@@ -59,6 +62,26 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
         });
     });
+});
 
-    // Email copy functionality removed
+// Add a mobile-specific fallback fix
+window.addEventListener('load', function() {
+    // Apply direct styles if needed
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    
+    if (window.innerWidth <= 768 && mobileMenuToggle && navMenu) {
+        // Force apply initial styles
+        navMenu.style.display = 'none';
+        
+        mobileMenuToggle.onclick = function(event) {
+            event.stopPropagation();
+            if (navMenu.style.display === 'none') {
+                navMenu.style.display = 'flex';
+                navMenu.style.flexDirection = 'column';
+            } else {
+                navMenu.style.display = 'none';
+            }
+        };
+    }
 });

@@ -19,7 +19,9 @@
             <span>TrackWhen</span>
         </div>
         <div class="menu-container">
-            <img src="images/menu.png" alt="Menu" class="mobile-menu-toggle">
+            <button type="button" class="mobile-menu-toggle" aria-label="Toggle menu">
+                <img src="images/menu.png" alt="Menu" width="30" height="30">
+            </button>
             <ul class="nav-menu">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#terms">Terms</a></li>
@@ -196,5 +198,30 @@
         </div>
     </section>
     <script src="script.js"></script>
+    <!-- Add a small helper script at the end -->
+    <script>
+        // Emergency fix for mobile menu
+        document.addEventListener('DOMContentLoaded', function() {
+            var toggle = document.querySelector('.mobile-menu-toggle');
+            var menu = document.querySelector('.nav-menu');
+            
+            if (toggle && menu) {
+                toggle.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    menu.classList.toggle('show');
+                }, true);
+            }
+        });
+    </script>
+    <style>
+    .mobile-menu-toggle {
+        background-color: transparent !important;
+        border: none !important;
+        padding: 0 !important;
+        outline: none !important;
+        -webkit-appearance: none !important;
+        appearance: none !important;
+    }
+    </style>
 </body>
 </html>
