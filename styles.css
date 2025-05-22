@@ -233,7 +233,7 @@ h2 {
     }
 }
 
-/* Contact Section Styles */
+/* Simplified Contact Section Styles */
 .contact-container {
     display: flex;
     justify-content: center;
@@ -260,7 +260,7 @@ h2 {
 .contact-email {
     display: inline-block;
     font-size: 1.4rem;
-    color: #fff; /* Already white, but ensuring it's explicit */
+    color: #fff;
     padding: 0.5rem 1rem;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 50px;
@@ -274,7 +274,7 @@ h2 {
     background: rgba(255, 255, 255, 0.2);
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
-    color: #fff; /* Ensuring text stays white on hover */
+    color: #fff;
 }
 
 .contact-details {
@@ -286,71 +286,6 @@ h2 {
     margin-bottom: 0.5rem;
 }
 
-/* Email copy functionality */
-.email-container {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    margin: 1.5rem 0;
-}
-
-.contact-email {
-    display: inline-block;
-    font-size: 1.4rem;
-    color: #fff;
-    padding: 0.5rem 1rem;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 50px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    transition: all 0.3s ease;
-    text-decoration: none;
-    margin: 0;
-}
-
-.copy-email-btn {
-    background: rgba(255, 255, 255, 0.15);
-    border: none;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    margin-left: 10px;
-    transition: all 0.2s ease;
-}
-
-.copy-email-btn:hover {
-    background: rgba(255, 255, 255, 0.25);
-    transform: translateY(-2px);
-}
-
-.copy-email-btn:active {
-    transform: translateY(0);
-}
-
-.copy-success {
-    position: absolute;
-    bottom: -30px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(46, 204, 113, 0.9);
-    color: white;
-    padding: 5px 15px;
-    border-radius: 4px;
-    font-size: 14px;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s, visibility 0.3s;
-    white-space: nowrap;
-}
-
-.copy-success.show {
-    opacity: 1;
-    visibility: visible;
-}
-
 @media (max-width: 768px) {
     .contact-card {
         padding: 1.5rem;
@@ -358,14 +293,5 @@ h2 {
     
     .contact-email {
         font-size: 1.2rem;
-    }
-
-    .email-container {
-        flex-direction: column;
-        gap: 10px;
-    }
-    
-    .copy-email-btn {
-        margin-left: 0;
     }
 }
